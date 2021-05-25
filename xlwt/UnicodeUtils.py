@@ -92,8 +92,6 @@ def upack2rt(rt, encoding='ascii'):
         # That is 1 if c <= '\uFFFF' else 2
         offset += len(s.encode('utf_16_le')) // 2
     num_fr = len(fr) // 4 # ensure result is int
-    if offset > 32767:
-        raise Exception('String longer than 32767 characters')
     try:
         encs = us.encode('latin1')
         # Success here means all chars are in U+0000 to U+00FF
